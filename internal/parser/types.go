@@ -36,10 +36,33 @@ type TextContent struct {
 }
 
 // TextEntity represents a formatted text fragment.
+// Can be either an object {"type": "...", "text": "..."} or a plain string.
 type TextEntity struct {
 	Type string `json:"type"`
 	Text string `json:"text"`
 	Href string `json:"href,omitempty"`
+}
+
+// UnmarshalJSON handles mixed array elements (objects or plain strings).
+func (te *TextEntity) UnmarshalJSON(data []byte) error {
+	// Try plain string first (Telegram puts plain strings directly in array)
+	var plain string
+	if err := json.Unmarshal(data, &plain); err == nil {
+		te.Type = "plain"
+		te.Text = plain
+		te.Href = ""
+		return nil
+	}
+
+	// Try object
+	type textEntityAlias TextEntity
+	var obj textEntityAlias
+	if err := json.Unmarshal(data, &obj); err != nil {
+		return err
+	}
+
+	*te = TextEntity(obj)
+	return nil
 }
 
 // UnmarshalJSON handles polymorphic text field.
