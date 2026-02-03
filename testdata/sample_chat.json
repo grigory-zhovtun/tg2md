@@ -1,0 +1,103 @@
+{
+  "name": "Рабочий чат",
+  "type": "private_supergroup",
+  "id": 1234567890,
+  "messages": [
+    {
+      "id": 1,
+      "type": "message",
+      "date": "2024-01-15T14:30:00",
+      "from": "Иван",
+      "from_id": "user123",
+      "text": "Привет, как дела?"
+    },
+    {
+      "id": 2,
+      "type": "message",
+      "date": "2024-01-15T14:31:00",
+      "from": "Мария",
+      "from_id": "user456",
+      "reply_to_message_id": 1,
+      "text": "Отлично!"
+    },
+    {
+      "id": 3,
+      "type": "message",
+      "date": "2024-01-15T14:32:00",
+      "from": "Пётр",
+      "from_id": "user789",
+      "forwarded_from": "Алексей",
+      "text": "Важная информация"
+    },
+    {
+      "id": 4,
+      "type": "message",
+      "date": "2024-01-15T14:33:00",
+      "from": "Анна",
+      "from_id": "user101",
+      "text": [
+        {"type": "plain", "text": "Это "},
+        {"type": "bold", "text": "важный"},
+        {"type": "plain", "text": " текст с "},
+        {"type": "text_link", "text": "ссылкой", "href": "https://example.com"}
+      ]
+    },
+    {
+      "id": 5,
+      "type": "service",
+      "date": "2024-01-15T14:34:00",
+      "actor": "Иван",
+      "actor_id": "user123",
+      "action": "invite_members",
+      "text": ""
+    },
+    {
+      "id": 6,
+      "type": "message",
+      "date": "2024-01-15T14:35:00",
+      "from": "Дмитрий",
+      "from_id": "user202",
+      "text": [
+        {"type": "plain", "text": "Код: "},
+        {"type": "code", "text": "fmt.Println()"},
+        {"type": "plain", "text": " и "},
+        {"type": "italic", "text": "курсив"}
+      ]
+    },
+    {
+      "id": 7,
+      "type": "message",
+      "date": "2024-02-10T10:00:00",
+      "from": "Иван",
+      "from_id": "user123",
+      "text": "Сообщение в феврале"
+    },
+    {
+      "id": 8,
+      "type": "message",
+      "date": "2024-02-10T10:01:00",
+      "from": "Мария",
+      "from_id": "user456",
+      "reply_to_message_id": 7,
+      "text": "Ответ на февральское сообщение"
+    },
+    {
+      "id": 9,
+      "type": "message",
+      "date": "2024-03-05T15:20:00",
+      "from": "Пётр",
+      "from_id": "user789",
+      "text": "Сообщение в марте с emoji 👍🎉"
+    },
+    {
+      "id": 10,
+      "type": "message",
+      "date": "2024-03-05T15:21:00",
+      "from": "Анна",
+      "from_id": "user101",
+      "text": [
+        {"type": "link", "text": "https://telegram.org"}
+      ]
+    }
+  ]
+}
